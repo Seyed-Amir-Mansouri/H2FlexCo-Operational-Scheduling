@@ -84,7 +84,7 @@ model.P_VPPA_H2FlexCo = Param(model.t, initialize=lambda model, t: 0.3 * sum(el_
 model.DSP = Param(model.e, model.t, initialize=lambda model, e, t: eff[e] * el_max[e] * (1 - flex[e]))
 
 # Variables
-model.h_EL = Var(model.e, model.t, within=NonNegativeReals) 
+model.h_EL = Var(model.e, model.t, within=NonPositiveReals) 
 model.p_EES = Var(model.e, model.t) 
 model.h_BD = Var(model.e, model.t, within=NonNegativeReals)  
 model.h_UBD = Var(model.e, model.t, within=NonNegativeReals) 
