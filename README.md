@@ -2,10 +2,9 @@
   <img src="Logo.png" alt="Description" width="30%">
 </p>
 
-# H2FlexCo: Hydrogen Flexibility Coordination Model
+# Operational Planning of Hydrogen-Centric Companies
 
-
-This repository contains a Pyomo-based energy system optimization model that utilizes flexibility resources to coordinate hydrogen production and consumption. The model uses input data from an Excel file and visualizes results with plots.
+This repository provides the implementation of a portfolio-level optimization framework for hydrogen-centric companies that simultaneously operate across electricity, hydrogen, and green certificate markets. The model is designed to co-optimize operational scheduling and market participation for geographically distributed assets, including electrolyzers, renewable generation units, and energy storage systems. The framework is formulated as a Mixed-Integer Linear Programming (MILP) model and implemented in Python (Pyomo), with openly available datasets and case studies.
 
 ## 📂 Files
 
@@ -38,6 +37,9 @@ The code uses the following libraries:
 - `pickle`
 
 You may also need a solver like GLPK or IPOPT for Pyomo.
+
+<!-- ## 📚 Citations
+If you use this repository in your work, please cite: -->
 
 ## 📝 License
 
