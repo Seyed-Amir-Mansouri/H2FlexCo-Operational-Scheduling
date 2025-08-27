@@ -5,7 +5,7 @@
 # Operational Planning of Hydrogen-Centric Companies
 
 This repository accompanies the paper ‘**A Portfolio-Level Optimization Framework for Coordinated Market Participation and Operational Scheduling of Hydrogen-Centric Companies**’, presented at the 2025 IEEE International Conference on Energy Technologies for Future Grids. It has been developed as part of the **WinHy** project, funded by the Dutch Research Council (NWO) and Repsol S.A.
-The repository provides the implementation of a portfolio-level optimization framework that enables hydrogen-centric companies to co-optimize operational scheduling and market participation for geographically distributed assets, including electrolyzers, Downstream Processes (DSPs), renewable generation units, and energy storage systems. The framework is formulated as a Mixed-Integer Linear Programming (MILP) model and implemented in Python (Pyomo).
+The repository provides the implementation of a portfolio-level optimization framework that enables hydrogen-centric companies to co-optimize operational scheduling and market participation for geographically distributed assets, including electrolyzers, Downstream Processes (DSPs), renewable generation units, and energy storage systems. The framework is formulated as a Mixed-Integer Linear Programming model and implemented in Python using Pyomo.
 
 ## 📂 Files
 
