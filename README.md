@@ -43,11 +43,18 @@ The framework is demonstrated on a representative hydrogen-centric company (**H2
 
 ---
 
-## 📂 Files
+## 📂 Repo Structure
 
-- `H2FlexCo.ipynb`: Main Jupyter Notebook with the optimization model.
-- `SimData.xlsx`: Excel file containing the input simulation data.
-- `requirements.txt`: List of required Python packages.
+```
+├─ H2FlexCo.ipynb                # Main Jupyter Notebook with the optimization model
+├─ H2FlexCo.py                   # Python version of the Main Jupyter Notebook
+├─ SimData.xlsx                  # Excel file containing the input simulation data
+└─ requirements.txt              # List of required Python packages
+├─ Cases/                    
+│  ├─ Decentralized.ipynb        # Decentralized site-level operation
+│  ├─ Centralized_PPA.ipynb      # Centralized PPA dispatch
+│  └─ Portfolio_Level.ipynb      # Full portfolio-level coordination with centralized policy enforcement
+```
 
 ---
 
