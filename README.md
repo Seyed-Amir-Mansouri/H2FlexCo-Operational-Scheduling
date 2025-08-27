@@ -7,7 +7,7 @@
 This repository accompanies the paper ‘**A Portfolio-Level Optimization Framework for Coordinated Market Participation and Operational Scheduling of Hydrogen-Centric Companies**’, presented at the 2025 IEEE International Conference on Energy Technologies for Future Grids. It has been developed as part of the **WinHy** project, funded by the Dutch Research Council (NWO) and Repsol S.A.
 
 ## 📝 Description
-This repository provides the implementation of a portfolio-level optimization framework for hydrogen-centric companies that simultaneously operate across electricity, hydrogen, and green certificate markets. The model is designed to co-optimize operational scheduling and market participation for geographically distributed assets, including electrolyzers, renewable generation units, and energy storage systems. The framework is formulated as a Mixed-Integer Linear Programming (MILP) model and implemented in Python using Pyomo.
+This repository provides the implementation of a portfolio-level optimization framework for hydrogen-centric companies that simultaneously operate across electricity, hydrogen, and green certificate markets. The model is designed to co-optimize operational scheduling and market participation for geographically distributed assets, including electrolyzers, renewable generation units, and energy storage systems. The framework is formulated as a Mixed-Integer Linear Programming (MILP) model and implemented in Python using Pyomo.
 
 ---
 
@@ -30,9 +30,9 @@ This repository provides the implementation of a portfolio-level optimization fr
 
 ## 🧪 Case Study
 The framework is demonstrated on a representative hydrogen-centric company (**H2FLEX**) operating five sites across Spain. Three operational setups are compared:  
-1. Decentralized site-level operation  
-2. Centralized PPA dispatch  
-3. Full portfolio-level coordination with centralized policy enforcement  
+- **Case 1**: Each electrolyzer operates independently with its own PPA and individual green hydrogen target constraints.  
+- **Case 2**: PPAs are centrally dispatched among electrolyzers by the company operator, while green hydrogen target constraints are still enforced on each site individually.  
+- **Case 3**: Both PPAs and green hydrogen targets are managed at the portfolio level by the company operator.     
 
 ---
 
@@ -51,9 +51,9 @@ The framework is demonstrated on a representative hydrogen-centric company (**H2
 ├─ SimData.xlsx                  # Excel file containing the input simulation data
 └─ requirements.txt              # List of required Python packages
 ├─ Cases/                    
-│  ├─ Decentralized.ipynb        # Decentralized site-level operation
-│  ├─ Centralized_PPA.ipynb      # Centralized PPA dispatch
-│  └─ Portfolio_Level.ipynb      # Full portfolio-level coordination with centralized policy enforcement
+│  ├─ Case_1.ipynb               # Decentralized site-level operation
+│  ├─ Case_2.ipynb               # Centralized PPA dispatch
+│  └─ Case_3.ipynb               # Full portfolio-level coordination with centralized policy enforcement
 ```
 
 ---
@@ -88,8 +88,10 @@ The code uses the following libraries:
 
 You may also need a solver like GLPK or IPOPT for Pyomo.
 
-<!-- ## 📚 Citations
-If you use this repository in your work, please cite: -->
+## 📚 Citations
+If you use this repository in your work, please cite: 
+
+*Mansouri, S. A., & Bruninx, K. (2025). A Portfolio-Level Optimization Framework for Coordinated Market Participation and Operational Scheduling of Hydrogen-Centric Companies. IEEE International Conference on Energy Technologies for Future Grids.*
 
 ---
 
