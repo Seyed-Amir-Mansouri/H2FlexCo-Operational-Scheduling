@@ -1,6 +1,6 @@
-pyomo
-pandas
-numpy
-matplotlib
-seaborn
-pickle-mixin
+pyomo==6.9.2
+pandas==2.3.0
+numpy==1.26.4
+matplotlib==3.10.3
+seaborn==0.13.2
+openpyxl=3.1.5
