@@ -85,6 +85,7 @@ The code uses the following libraries:
 - `matplotlib`
 - `seaborn`
 - `pickle`
+- `openpyxl`
 
 You may also need a solver like GLPK or IPOPT for Pyomo.
 
