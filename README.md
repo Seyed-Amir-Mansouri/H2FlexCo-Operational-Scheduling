@@ -2,99 +2,72 @@
   <img src="Logo.png" alt="Description" width="30%">
 </p>
 
-# Operational Planning of Hydrogen-Centric Companies
+# Operational Planning of Hydrogen-Centric Companies
 
-This repository accompanies the paper ‘**A Portfolio-Level Optimization Framework for Coordinated Market Participation and Operational Scheduling of Hydrogen-Centric Companies**’, presented at the 2025 IEEE International Conference on Energy Technologies for Future Grids. It has been developed as part of the **WinHy** project, funded by the Dutch Research Council (NWO) and Repsol S.A.
+This repository accompanies the paper "A Portfolio-Level Optimization Framework for Coordinated Market Participation and Operational Scheduling of Hydrogen-Centric Companies," presented at the 2025 IEEE International Conference on Energy Technologies for Future Grids. The work was developed as part of the WinHy project, funded by the Dutch Research Council (NWO) and Repsol S.A.
 
-## 📝 Description
-This repository provides the implementation of a portfolio-level optimization framework for hydrogen-centric companies that simultaneously operate across electricity, hydrogen, and green certificate markets. The model is designed to co-optimize operational scheduling and market participation for geographically distributed assets, including electrolyzers, renewable generation units, and energy storage systems. The framework is formulated as a Mixed-Integer Linear Programming (MILP) model and implemented in Python (version 3.12.5) within a Jupyter Notebook environment using Pyomo.
+## Description
 
----
+This repository contains the implementation of a portfolio-level optimization framework for hydrogen-centric companies operating across electricity, hydrogen, and green certificate markets at the same time. The model co-optimizes operational scheduling and market participation for geographically distributed assets, including electrolyzers, renewable generation units, and energy storage systems. It's formulated as a Mixed-Integer Linear Program (MILP) and implemented in Python (3.12.5) inside a Jupyter Notebook, using Pyomo.
 
-## ✨ Key Features
-- Multi-market integration: Co-optimizes participation in electricity, hydrogen (bundled and unbundled), and green certificate markets.  
-- Portfolio-level coordination: Unlocks flexibility by centrally scheduling distributed assets across multiple sites, beyond individual asset operation.  
-- Contractual heterogeneity: Supports both physical and virtual Power Purchase Agreements (PPAs) with take-as-produced structures.  
-- Policy compliance: Incorporates company-level green hydrogen targets, certification rules, and clean energy temporal matching constraints.  
-- Scalability: Applicable to hydrogen-centric companies of different sizes with multiple operational scenarios.  
+## Key features
 
----
+- Co-optimizes participation in electricity, hydrogen (bundled and unbundled), and green certificate markets at the same time.
+- Coordinates flexibility across a portfolio of distributed sites, rather than optimizing each asset on its own.
+- Supports both physical and virtual Power Purchase Agreements (PPAs), including take-as-produced structures.
+- Enforces company-level green hydrogen targets, certification rules, and clean energy temporal matching constraints.
+- Works for hydrogen-centric companies of different sizes and under different operational scenarios.
 
-## ⚙️ Model Highlights
-- Implemented as a day-ahead operational planning model.  
-- Objective function maximizes total company profit, considering hydrogen sales revenues, certificate transactions, electricity market exchanges, and PPA settlements.  
-- Captures asset-level technical constraints (electrolyzers, energy storage, renewable generation).  
-- Enables comparative analysis of different compliance strategies (per-site vs. portfolio-level enforcement).  
+## Model
 
----
+The model plans day-ahead operation. The objective maximizes total company profit, accounting for hydrogen sales revenue, certificate transactions, electricity market exchanges, and PPA settlements. It captures asset-level technical constraints (electrolyzers, energy storage, renewable generation) and allows comparing per-site versus portfolio-level compliance strategies.
 
-## 🧪 Case Study
-The framework is demonstrated on a representative hydrogen-centric company (**H2FLEX**) operating five sites across Spain. Three operational setups are compared:  
-- **Case 1**: Each electrolyzer operates independently with its own PPA and individual green hydrogen target constraints.  
-- **Case 2**: PPAs are centrally dispatched among electrolyzers by the company operator, while green hydrogen target constraints are still enforced on each site individually.  
-- **Case 3**: Both PPAs and green hydrogen targets are managed at the portfolio level by the company operator.     
+## Case study
 
----
+The framework is demonstrated on a representative hydrogen-centric company (H2FLEX) operating five sites across Spain. Three operational setups are compared:
 
-## 📊 Key Results
-- Centralized coordination enables up to a **2.42× increase in hydrogen production**.  
-- Achieves a **9.4% reduction in daily operational costs**.  
-- Portfolio-level enforcement improves flexibility, allowing **46.6% higher hydrogen production** while maintaining green hydrogen certification compliance.  
+- **Case 1** – each electrolyzer operates independently, with its own PPA and its own green hydrogen target constraint.
+- **Case 2** – PPAs are dispatched centrally across electrolyzers by the company operator, but green hydrogen targets are still enforced per site.
+- **Case 3** – both PPAs and green hydrogen targets are managed at the portfolio level by the company operator.
 
----
+Across these cases, centralized coordination increases hydrogen production and lowers daily operational costs compared to decentralized operation, and portfolio-level enforcement of green hydrogen targets gives more flexibility than enforcing them per site, without breaking certification compliance.
 
-## 📂 Repo Structure
+## Repository structure
 
 ```
-├─ H2FlexCo.ipynb                # Main Jupyter Notebook with the optimization model
-├─ H2FlexCo.py                   # Python version of the Main Jupyter Notebook
-├─ SimData.xlsx                  # Excel file containing the input simulation data
-└─ requirements.txt              # List of required Python packages
-├─ Cases/                    
+├─ H2FlexCo.ipynb                # Main notebook with the optimization model
+├─ H2FlexCo.py                   # Script version of the main notebook
+├─ SimData.xlsx                  # Input simulation data
+├─ requirements.txt              # Python package requirements
+├─ LICENSE                       # MIT License
+├─ Logo.png                      # Repository logo
+├─ Cases/
 │  ├─ Case_1.ipynb               # Decentralized site-level operation
 │  ├─ Case_2.ipynb               # Centralized PPA dispatch
-│  └─ Case_3.ipynb               # Full portfolio-level coordination with centralized policy enforcement
+│  ├─ Case_3.ipynb               # Full portfolio-level coordination
+│  └─ SimData.xlsx               # Input data for the case studies
 ```
 
----
-
-## 🚀 Requirements
-
-Install the necessary Python libraries using:
+## Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+You'll also need the GLPK solver for Pyomo, since the model is a MILP.
 
-## 📈 How to Run
+## How to run
 
-1. Open `H2FlexCo.ipynb` in Jupyter Notebook or JupyterLab.
-2. Ensure `SimData.xlsx` is in the same directory as the notebook.
-3. Run all cells in the notebook to execute the model and generate results.
+Open `H2FlexCo.ipynb` in Jupyter Notebook or JupyterLab, make sure `SimData.xlsx` is in the same folder, and run all cells.
 
----
+For the individual case studies, open the corresponding notebook under `Cases/` (`Case_1.ipynb`, `Case_2.ipynb`, or `Case_3.ipynb`) and run all cells — each one reads `SimData.xlsx` from within that same folder.
 
-## 📦 Dependencies
+## Citation
 
-The code uses the following libraries:
-- `pyomo`
-- `pandas`
-- `numpy`
-- `matplotlib`
-- `seaborn`
-- `openpyxl`
+If you use this repository, please cite:
 
-You may also need a solver like GLPK or IPOPT for Pyomo.
+Mansouri, S. A., & Bruninx, K. (2025). A Portfolio-Level Optimization Framework for Coordinated Market Participation and Operational Scheduling of Hydrogen-Centric Companies. IEEE International Conference on Energy Technologies for Future Grids.
 
-## 📚 Citations
-If you use this repository in your work, please cite: 
-
-*Mansouri, S. A., & Bruninx, K. (2025). A Portfolio-Level Optimization Framework for Coordinated Market Participation and Operational Scheduling of Hydrogen-Centric Companies. IEEE International Conference on Energy Technologies for Future Grids.*
-
----
-
-## 📝 License
+## License
 
 MIT License.
